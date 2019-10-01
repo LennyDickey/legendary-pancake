@@ -34,7 +34,26 @@ export default class Product extends React.Component {
 
   render() {
     const { error, isLoaded, products } = this.state;
-
+    const searchProducts = value => {
+      fetch(`/product/${value}`)
+        .then(res => res.json())
+        .then(
+          data => {
+            console.log("data.products - ", data);
+            this.setState({
+              isLoaded: true,
+              products: data
+            });
+          },
+          error => {
+            this.setState({
+              isLoaded: true,
+              error
+            });
+          }
+        );
+      console.log("value - ", value);
+    };
     if (error) {
       return <div>Error: {error.message}</div>;
     } else if (!isLoaded) {
@@ -57,7 +76,12 @@ export default class Product extends React.Component {
             Type something in to see if we have any of the platforms or prices
             you are looking for:
           </p>
-          <input id="myInput" type="text" placeholder="Search.." />
+          <input
+            id="myInput"
+            type="text"
+            placeholder="Search.."
+            onChange={e => searchProducts(e.target.value)}
+          />
           <div>
             <div className="album py-5 bg-light">
               <div className="container">
