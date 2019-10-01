@@ -1,0 +1,78 @@
+-- CREATE TABLE ecom_data.Price (
+-- id int NOT NULL AUTO_INCREMENT ,
+-- amount int,
+-- PRIMARY KEY (id)
+-- );
+
+-- CREATE TABLE ecom_data.Product (
+-- id int NOT NULL AUTO_INCREMENT,
+-- name varchar(255),
+-- Price_id int,
+-- description varchar(255),
+-- img_url varchar(255),
+-- PRIMARY KEY (id),
+-- FOREIGN KEY (Price_id) REFERENCES Price(id)
+-- );
+
+-- CREATE TABLE ecom_data.Contact (
+-- id int NOT NULL AUTO_INCREMENT,
+-- name varchar(255),
+-- age int,
+-- phone int,
+-- email varchar(255),
+-- address varchar(255),
+-- subject varchar(255),
+-- comment varchar(255),
+-- PRIMARY KEY (id)
+-- );
+
+-- INSERT INTO ecom_data.Product (name, Price_id, description, img_url)
+-- Values
+-- ("LUNA MUG", "This mug in the shape of Sailor Moon\s guardian kitty will help you get your priorities straight over your morning brew.", "https://hottopic.scene7.com/is/image/HotTopic/10911226_hi?$pdp_hero_standard$"),
+-- ("SAILOR MOON FAN", "Let your favourite anime characters keep you cool, with this beautifully designed fan!", "https://c49d16a6c82563251344-1ab5a5b00ecdd96a368a8d8d17482920.ssl.cf2.rackcdn.com/images/TS_Sailor_Moon_And_Sailor_Chibi_Moon_Fan_4_99_Held_1-380-405.jpg"),
+-- ("MINI MAMORU", "Limited-Edition action figure of Mamoru Chiba.", "https://images-na.ssl-images-amazon.com/images/I/41P6VPrzX%2BL._SX425_.jpg"),
+-- ("SAILOR CAPS", "Luna inspired sailor moon dad hats.", "https://i.etsystatic.com/9041878/r/il/bb7ff6/1159843788/il_fullxfull.1159843788_g29k.jpg"),
+-- ("ARTEMIS T-SHIRT", "Minako\s white guardian cat on a shirt.", "https://i.etsystatic.com/15740862/r/il/440180/1790784978/il_794xN.1790784978_al50.jpg"),
+-- ("SAILOR BOTTLE", "Moon power cup with straws.", "https://www.dhresource.com/0x0s/f2-albu-g10-M01-23-73-rBVaVlzBfJOAQswwAAEtPyciP9M553.jpg/japanese-sailor-moon-cartoon-bottle-sippy.jpg"),
+-- ("BABY GUARDIAN", "Artemis and Luna onesie for toddlers.", "https://i.etsystatic.com/11460121/r/il/6888d0/1599193034/il_794xN.1599193034_f2kp.jpg"),
+-- ("SAILOR-GOTCHI", "Sailor moon tamagotchi pin.", "https://cdn.shopify.com/s/files/1/2804/6118/products/Moon-01_300x300.jpg?v=1516688007"),
+-- ("SAILOR SQUAD", "Colorful Sailor Squad t-shirt.", "https://i.pinimg.com/originals/a8/77/0a/a8770a9d79dcb4bf6dc661dbc426b237.jpg"),
+-- ("LUNA BAG","Luna back-to-school bookbag.", "https://ae01.alicdn.com/kf/HTB1YWDMa.4WMKJjSspmq6AznpXal/Women-Girl-Cute-Sailor-Moon-Backpack-Cat-Ear-Shape-Luna-Schoolbag-Round-Designer-Funny-Bag-Bookbag.jpg"),
+-- ("CRESCENT MOON", "Custom Sailor Moon Inspired Crescent Moon Necklace.", "https://i.etsystatic.com/13286761/r/il/b851d9/1368774163/il_1588xN.1368774163_f1g4.jpg");
+
+
+-- INSERT INTO ecom_data.Price (amount)
+-- VALUES (60),(20)(12),(45),(30),(20),(35),(25),(30),(26),(49),(300);
+
+
+-- INSERT INTO ecom_data.Contact (name,age,phone,email,address,subject,comment)
+-- VALUES ("Joe Jonas",25,2058574758,
+-- "joejonas@gmail.com", "124 Main St.","Huge Fan!", 
+-- "Hey, this is Joe Jonas from The Jonas Brothers. I'm leaving a comment to let you know that I LOVE your site. Keep of the good work." ),
+-- ("Nick Jonas",22,2075095647,
+-- "nickjonas@gmail.com","124 Main St.", "Cool Site!", 
+-- "Hey, this is Nick Jonas from The Jonas Brothers. I'm leaving a comment to let you know that I LOVE your site. Keep of the good work." ),
+-- ("Kevin Jonas",35,9095674357,
+-- "kevinjonas@gmail.com", "124 Main St.","Love it!", 
+-- "Hey, this is Kevin Jonas from The Jonas Brothers. I'm leaving a comment to let you know that I LOVE your site. Keep of the good work." )
+-- ("Kim Kardashian",30,2058574755,
+-- "kimk@gmail.com", "345 Main St.","Huge Fan!", 
+-- "Hey, this is Kim Kardashian. I'm leaving a comment to let you know that I LOVE your site. Keep of the good work." ),
+-- ("Kanye West",30,2055095657,
+-- "kwest@gmail.com","345 Main St.", "Cool Site!", 
+-- "Hey, this is Kanye West. I'm leaving a comment to let you know that I LOVE your site. Keep of the good work." ),
+-- ("Kylie Jenner",20,2055675357,
+-- "kjenner@gmail.com", "345 Main St.","Love it!", 
+-- "Hey, this is Kylie Jenner. I'm leaving a comment to let you know that I LOVE your site. Keep of the good work." ),
+-- ("Kendall Jenner",20,1058574755,
+-- "kkjenner@gmail.com", "345 Main St.","Huge Fan!", 
+-- "Hey, this is Kendall Jenner. I'm leaving a comment to let you know that I LOVE your site. Keep of the good work." ),
+-- ("Caitlyn Jenner",45,2087095007,
+-- "cjenner@gmail.com","345 Main St.", "Cool Site!", 
+-- "Hey, this is Caitlyn Jenner. I'm leaving a comment to let you know that I LOVE your site. Keep of the good work." ),
+-- ("Rob Kardashian",35,2087675357,
+-- "rkardashian@gmail.com", "345 Main St.","Love it!", 
+-- "Hey, this is Rob Kardashian. I'm leaving a comment to let you know that I LOVE your site. Keep of the good work." ),
+-- ("Kourtney Kardashian",30,2055675357,
+-- "kkkkardashian@gmail.com", "345 Main St.","Love it!", 
+-- "Hey, this is Kourtney Kardashian. I'm leaving a comment to let you know that I LOVE your site. Keep of the good work." );
