@@ -80,52 +80,18 @@ class Contact extends React.Component {
           </form>
         </div>
         <br></br>
+        <h2>Reviews</h2>
         {contact.map((contact, index) => (
 
-        <div className="container">
-          <div id="carouselContent" className="carousel slide" data-ride="carousel">
-            <div className="carousel-inner" role="listbox">
-            {/* {contact.map((contact, index) => ( */}
+  <div class="card-body conrew">
+    <blockquote class="blockquote mb-0">
+      <p>{contact.comment}</p>
+      <footer class="blockquote-footer">{contact.name }</footer>
+    </blockquote>
+  </div>
 
-              <div className="carousel-item active text-center p-4">
-                <p>"{contact.comment}"</p>
-                <p>
-                  <font>{contact.name}</font>
-                </p>
-              </div>
-              <div className="carousel-item text-center p-4">
-                <p>"Second quote goes here."</p>
-                <p>
-                  <font>First Last</font>
-                </p>
-              </div>
-            </div>
-            <a
-              className="carousel-control-prev"
-              href="#carouselContent"
-              role="button"
-              data-slide="prev"
-            >
-              <span
-                className="carousel-control-prev-icon"
-                aria-hidden="true"
-              ></span>
-              <span className="sr-only">Previous</span>
-            </a>
-            <a
-              className="carousel-control-next"
-              href="#carouselContent"
-              role="button"
-              data-slide="next"
-            >
-              <span
-                className="carousel-control-next-icon"
-                aria-hidden="true"
-              ></span>
-              <span className="sr-only">Next</span>
-            </a>
-          </div>
-        </div>
+
+   
         )
         )}
       </>
