@@ -2,37 +2,36 @@ import React from "react";
 import "./styles.css";
 
 class Contact extends React.Component {
-  
-    constructor(props) {
-      super(props);
-      this.state = {
-        error: null,
-        isLoaded: false,
-        contact: []
-      };
-    }
-  
-    componentDidMount() {
-      fetch("/contact")
-        .then(res => res.json())
-        .then(
-          data => {
-            console.log("data.contact - ", data);
-            this.setState({
-              isLoaded: true,
-              contact: data
-            });
-          },
-          error => {
-            this.setState({
-              isLoaded: true,
-              error
-            });
-          }
-        );
-    }
-    render() {
-      const { error, isLoaded, contact } = this.state;
+  constructor(props) {
+    super(props);
+    this.state = {
+      error: null,
+      isLoaded: false,
+      contact: []
+    };
+  }
+
+  componentDidMount() {
+    fetch("/contact")
+      .then(res => res.json())
+      .then(
+        data => {
+          console.log("data.contact - ", data);
+          this.setState({
+            isLoaded: true,
+            contact: data
+          });
+        },
+        error => {
+          this.setState({
+            isLoaded: true,
+            error
+          });
+        }
+      );
+  }
+  render() {
+    const { error, isLoaded, contact } = this.state;
 
     return (
       <>
@@ -82,18 +81,13 @@ class Contact extends React.Component {
         <br></br>
         <h2>Reviews</h2>
         {contact.map((contact, index) => (
-
-  <div class="card-body conrew">
-    <blockquote class="blockquote mb-0">
-      <p>{contact.comment}</p>
-      <footer class="blockquote-footer">{contact.name }</footer>
-    </blockquote>
-  </div>
-
-
-   
-        )
-        )}
+          <div class="card-body conrew">
+            <blockquote class="blockquote mb-0">
+              <p>{contact.comment}</p>
+              <footer class="blockquote-footer">{contact.name}</footer>
+            </blockquote>
+          </div>
+        ))}
       </>
     );
   }

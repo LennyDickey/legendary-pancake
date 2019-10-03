@@ -1,8 +1,8 @@
+// Import React, and CSS. Bootstrap is global.
 import React from "react";
 import "./styles.css";
-import { Planet } from "react-kawaii";
 
-// import './products.json'
+
 
 export default class Cards extends React.Component {
   constructor(props) {
