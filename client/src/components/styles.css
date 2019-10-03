@@ -311,3 +311,13 @@ form:after {
 /* #type{
   padding: 25px 50px 75px 100px;
 } */
+font {
+  color: #fcd000;
+  font-size: 14px;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-style: italic;
+}
+.carousel-inner{
+  background-color: rgb(197, 154, 237);
+}
