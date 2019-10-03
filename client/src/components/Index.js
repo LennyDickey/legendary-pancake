@@ -37,12 +37,12 @@ const Slideshow = () => {
         <div class="carousel-item active">
           <img
             class="d-block w-100"
-            src="/data/img/slide1.png"
+            src="/data/img/slide4.jpg"
             alt="First slide"
           />
         </div>
         <div class="carousel-item">
-          <img class="d-block w-100" src="/data/img/slide2.jpg" alt="Second slide" />
+          <img class="d-block w-100" src="/data/img/slide5.png" alt="Second slide" />
         </div>
         <div class="carousel-item">
           <img class="d-block w-100" src="/data/img/slide3.jpg" alt="Third slide" />
@@ -96,6 +96,7 @@ class Index extends React.Component {
   render() {
     return (
       <>
+      
         <Slideshow />
         <section id="who">
           <div class="container">

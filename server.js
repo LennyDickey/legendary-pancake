@@ -5,14 +5,16 @@ const app = express();
 const mysql = require("mysql");
 var morgan = require("morgan");
 const helmet = require("helmet");
+const dotenv = require("dotenv").config();
+
 // const apiRoutes = require("./routes/apiRoutes");
 
 var connection = mysql.createConnection({
   host: "localhost",
   // db port
-  port: 3306,
-  user: "root",
-  password: "password",
+  port: process.env.DB_PORT,
+  user: process.env.DB_USER,
+  password: process.env.DB_PASS,
   database: "ecom_data"
 });
 
@@ -34,6 +36,10 @@ app.use(express.json());
 //   res.sendFile(path.join(__dirname, "./client/build/index.html"));
 // });
 
+app.get("/", (req, res) => {
+  res.sendFile("client/public/index.html", { root: __dirname });
+});
+
 app.get("/product", (req, res) => {
   connection.query(
     "SELECT Product.*, Price.amount FROM Product LEFT JOIN Price ON (Product.Price_id = Price.id)",
@@ -52,15 +58,27 @@ app.get("/contact", (req, res) => {
 
 app.get("/product/:query", (req, res) => {
   let item = req.params.query;
-  connection.query("SELECT * FROM Product WHERE id = ?", [item], function(
-    err,
-    data
-  ) {
-    res.json(data);
-    console.log(data);
-  });
+  connection.query(
+    "SELECT Product.*, Price.amount FROM Product LEFT JOIN Price ON (Product.Price_id = Price.id) ",
+    [item],
+    function(err, data) {
+      res.json(data);
+      console.log(data);
+    }
+  );
 });
 
+app.get("/productfilter/:query", (req, res) => {
+  let price = req.params.query;
+  connection.query(
+    "SELECT Product.*, Price.amount FROM Product LEFT JOIN Price ON (Product.Price_id = Price.id) WHERE Price.amount = ?",
+    [price],
+    function(err, data) {
+      res.json(data);
+      console.log(data);
+    }
+  );
+});
 // app.get("/api/productinvoice/:query", (req, res) => {
 //     connection.query("SELECT * FROM Contact", function(err, data) {
 //       res.send(data);
@@ -71,3 +89,5 @@ app.get("/product/:query", (req, res) => {
 app.listen(PORT, function() {
   console.log(`🌎 ==> API server now on port ${PORT}!`);
 });
+
+module.exports = app;

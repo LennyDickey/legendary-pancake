@@ -21,12 +21,12 @@ export default function Nav() {
       <div class="collapse navbar-collapse" id="navigation-bar">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item">
-            <a class="nav-link" href="/index">
+            <a class="nav-link" href="/">
               HOME
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/product">
+            <a class="nav-link" href="/cards">
               PRODUCTS
             </a>
           </li>
